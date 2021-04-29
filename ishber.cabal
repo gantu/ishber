@@ -1,0 +1,117 @@
+cabal-version: 1.12
+
+-- This file has been generated from package.yaml by hpack version 0.33.0.
+--
+-- see: https://github.com/sol/hpack
+--
+-- hash: 0468bb0f7b668e0404aff03e8c197faac1d294766d07b751566514d751326811
+
+name:           ishber
+version:        0.1.0.0
+description:    Please see the README on GitHub at <https://github.com/githubuser/ishber#readme>
+homepage:       https://github.com/githubuser/ishber#readme
+bug-reports:    https://github.com/githubuser/ishber/issues
+author:         Author name here
+maintainer:     example@example.com
+copyright:      2021 Author name here
+license:        BSD3
+license-file:   LICENSE
+build-type:     Simple
+extra-source-files:
+    README.md
+    ChangeLog.md
+
+source-repository head
+  type: git
+  location: https://github.com/githubuser/ishber
+
+library
+  exposed-modules:
+      Api
+      App
+      Lib
+      Model
+      ReadWrite
+  other-modules:
+      Paths_ishber
+  hs-source-dirs:
+      src
+  build-depends:
+      aeson
+    , base >=4.7 && <5
+    , esqueleto
+    , monad-control
+    , monad-logger
+    , persistent
+    , persistent-postgresql
+    , persistent-template
+    , servant
+    , servant-client
+    , servant-server
+    , text
+    , time
+    , transformers
+    , unliftio-core
+    , wai
+    , wai-make-assets
+    , warp
+  default-language: Haskell2010
+
+executable ishber-exe
+  main-is: Main.hs
+  other-modules:
+      Paths_ishber
+  hs-source-dirs:
+      app
+  ghc-options: -threaded -rtsopts -with-rtsopts=-N
+  build-depends:
+      aeson
+    , base >=4.7 && <5
+    , esqueleto
+    , ishber
+    , monad-control
+    , monad-logger
+    , persistent
+    , persistent-postgresql
+    , persistent-template
+    , servant
+    , servant-client
+    , servant-server
+    , text
+    , time
+    , transformers
+    , unliftio-core
+    , wai
+    , wai-make-assets
+    , warp
+  default-language: Haskell2010
+
+test-suite ishber-test
+  type: exitcode-stdio-1.0
+  main-is: Spec.hs
+  other-modules:
+      Paths_ishber
+  hs-source-dirs:
+      test
+  ghc-options: -threaded -rtsopts -with-rtsopts=-N
+  build-depends:
+      aeson
+    , base >=4.7 && <5
+    , esqueleto
+    , ishber
+    , monad-control
+    , monad-logger
+    , persistent
+    , persistent-postgresql
+    , persistent-template
+    , servant
+    , servant-client
+    , servant-server
+    , text
+    , time
+    , transformers
+    , unliftio-core
+    , wai
+    , wai-make-assets
+    , warp
+  default-language: Haskell2010
