@@ -1,6 +1,7 @@
 module Main where
 
-import Lib
+import App
+import ClassyPrelude
 
 main :: IO ()
-main = someFunc
+main = runServer 

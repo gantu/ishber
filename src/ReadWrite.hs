@@ -8,7 +8,7 @@
 
 module ReadWrite where
 
-import Model
+import           Model as D
 import           Control.Monad.IO.Class
 import           Control.Monad.IO.Unlift
 import           Control.Monad.Logger
@@ -21,6 +21,8 @@ import           Data.Int(Int64)
 import           Database.Esqueleto
 import           Database.Persist.Postgresql (createPostgresqlPool,
                                               withPostgresqlConn, ConnectionString)
+import           ClassyPrelude
+
 
 connectionString :: ConnectionString  
 connectionString = "host=localhost port=5432 user=kyrdev dbname=ishber password=s3cr3t"

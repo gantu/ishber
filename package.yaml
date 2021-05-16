@@ -36,8 +36,39 @@ dependencies:
 - warp
 - servant-server
 - servant-client
+- servant-options
 - wai
 - wai-make-assets
+- wai-cors
+- servant-auth
+- servant-auth-server
+- servant-auth-client
+- wai-app-static
+- bytestring
+- file-embed
+- pcre-heavy
+- classy-prelude
+
+default-extensions:
+- NoImplicitPrelude
+- OverloadedStrings
+- QuasiQuotes
+- GeneralizedNewtypeDeriving
+- ConstraintKinds
+- FlexibleContexts
+- TemplateHaskell
+- DataKinds
+- TypeOperators
+- TypeFamilies
+- MultiParamTypeClasses
+- GADTs
+- RecordWildCards
+- FlexibleInstances
+- DerivingStrategies
+- StandaloneDeriving
+- UndecidableInstances
+- DeriveGeneric
+
 library:
   source-dirs: src
 

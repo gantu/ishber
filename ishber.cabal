@@ -4,7 +4,7 @@ cabal-version: 1.12
 --
 -- see: https://github.com/sol/hpack
 --
--- hash: 0468bb0f7b668e0404aff03e8c197faac1d294766d07b751566514d751326811
+-- hash: 18511727e2cf93060a6350d15c9ceccd19fed56ba362ed1dfeab58c4fcbc735a
 
 name:           ishber
 version:        0.1.0.0
@@ -32,27 +32,39 @@ library
       Lib
       Model
       ReadWrite
+      Validation
   other-modules:
       Paths_ishber
   hs-source-dirs:
       src
+  default-extensions: NoImplicitPrelude OverloadedStrings QuasiQuotes GeneralizedNewtypeDeriving ConstraintKinds FlexibleContexts TemplateHaskell DataKinds TypeOperators TypeFamilies MultiParamTypeClasses GADTs RecordWildCards FlexibleInstances DerivingStrategies StandaloneDeriving UndecidableInstances DeriveGeneric
   build-depends:
       aeson
     , base >=4.7 && <5
+    , bytestring
+    , classy-prelude
     , esqueleto
+    , file-embed
     , monad-control
     , monad-logger
+    , pcre-heavy
     , persistent
     , persistent-postgresql
     , persistent-template
     , servant
+    , servant-auth
+    , servant-auth-client
+    , servant-auth-server
     , servant-client
+    , servant-options
     , servant-server
     , text
     , time
     , transformers
     , unliftio-core
     , wai
+    , wai-app-static
+    , wai-cors
     , wai-make-assets
     , warp
   default-language: Haskell2010
@@ -63,25 +75,36 @@ executable ishber-exe
       Paths_ishber
   hs-source-dirs:
       app
+  default-extensions: NoImplicitPrelude OverloadedStrings QuasiQuotes GeneralizedNewtypeDeriving ConstraintKinds FlexibleContexts TemplateHaskell DataKinds TypeOperators TypeFamilies MultiParamTypeClasses GADTs RecordWildCards FlexibleInstances DerivingStrategies StandaloneDeriving UndecidableInstances DeriveGeneric
   ghc-options: -threaded -rtsopts -with-rtsopts=-N
   build-depends:
       aeson
     , base >=4.7 && <5
+    , bytestring
+    , classy-prelude
     , esqueleto
+    , file-embed
     , ishber
     , monad-control
     , monad-logger
+    , pcre-heavy
     , persistent
     , persistent-postgresql
     , persistent-template
     , servant
+    , servant-auth
+    , servant-auth-client
+    , servant-auth-server
     , servant-client
+    , servant-options
     , servant-server
     , text
     , time
     , transformers
     , unliftio-core
     , wai
+    , wai-app-static
+    , wai-cors
     , wai-make-assets
     , warp
   default-language: Haskell2010
@@ -93,25 +116,36 @@ test-suite ishber-test
       Paths_ishber
   hs-source-dirs:
       test
+  default-extensions: NoImplicitPrelude OverloadedStrings QuasiQuotes GeneralizedNewtypeDeriving ConstraintKinds FlexibleContexts TemplateHaskell DataKinds TypeOperators TypeFamilies MultiParamTypeClasses GADTs RecordWildCards FlexibleInstances DerivingStrategies StandaloneDeriving UndecidableInstances DeriveGeneric
   ghc-options: -threaded -rtsopts -with-rtsopts=-N
   build-depends:
       aeson
     , base >=4.7 && <5
+    , bytestring
+    , classy-prelude
     , esqueleto
+    , file-embed
     , ishber
     , monad-control
     , monad-logger
+    , pcre-heavy
     , persistent
     , persistent-postgresql
     , persistent-template
     , servant
+    , servant-auth
+    , servant-auth-client
+    , servant-auth-server
     , servant-client
+    , servant-options
     , servant-server
     , text
     , time
     , transformers
     , unliftio-core
     , wai
+    , wai-app-static
+    , wai-cors
     , wai-make-assets
     , warp
   default-language: Haskell2010
